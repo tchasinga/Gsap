@@ -41,7 +41,7 @@ p {
 
 .menu-bar a,
 .menu-open p {
-  color: #fff;
+  color: black;
   cursor: pointer;
 }
 .menu-close p {
@@ -59,7 +59,8 @@ p {
   background: #c5fb45;
   z-index: 2;
   display: flex;
-  clip-path: polygon (00, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+
 }
 
 .menu-close-icon {
@@ -91,7 +92,7 @@ p {
 
 .menu-link-item {
   width: max-content;
-  clip-path: polygon (00, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .menu-link-item-holder {

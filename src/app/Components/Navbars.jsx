@@ -1,7 +1,9 @@
 "use client"
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './navdesign.css'
 import Link from 'next/link'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 const menu = [
   { name: 'Home', link: '/' },
@@ -20,7 +22,34 @@ export default function Navbars() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+    console.log(isMenuOpen)
   }
+
+  const tl = useRef();
+  useGSAP(() => {
+    gsap.set(".menu-link-item-holder", { y: 75 });
+    tl.current = gsap.timeline({paused: true})
+    .to(".menu-overlay",{
+      duration: 2.25,
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      ease: "power4.inOut"
+    })
+    .to(".menu-link-item-holder", {
+      y: 0,
+      duration:1,
+      stagger: 0.1,
+      ease: "power4.inOut",
+      delay: -0.25
+    })
+  }, {scope: container})
+
+  useEffect(() =>{
+    if(isMenuOpen){
+      tl.current.play()
+    }else{
+      tl.current.reverse()
+    }
+  }, [isMenuOpen])
 
   return (
     <div className='menu-container' ref={container}>
@@ -44,7 +73,7 @@ export default function Navbars() {
           </div>
         </div>
 
-        <div className="menu-close-icon">
+        <div className="menu-close-icon" onClick={toggleMenu}>
           <p>&#x2715;</p>
         </div>
 
@@ -59,6 +88,8 @@ export default function Navbars() {
             ))}
           </div>
 
+          
+            
           <div className="menu-info">
             <div className="menu-info-col">
               <a href="#">X &#8599;</a>
