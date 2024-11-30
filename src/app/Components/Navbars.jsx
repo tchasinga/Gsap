@@ -1,11 +1,12 @@
 "use client"
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import './navdesign.css'
 
 export default function Navbars() {
   return (
-    <div className=''>
+    <div className='famili'>
+     
     </div>
   )
 }
