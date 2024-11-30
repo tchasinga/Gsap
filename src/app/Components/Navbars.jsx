@@ -24,8 +24,47 @@ export default function Navbars() {
   }
 
   return (
-    <div className='' ref={container}>
-      
+    <div className='menu-container' ref={container}>
+      <div className="menu-bar">
+        <div className="menu-logo">
+          <Link href='/'>Tchasinga</Link>
+        </div>
+
+        <div className="menu-open">
+          <p>Menu</p>
+        </div>
+      </div>
+
+{/* Second step */}
+      <div className="menu-overlay">
+        <div className="menu-overlay-bar">
+          <div className="menu-logo"><Link>Tchasinga</Link></div>
+          <div className="menu-close"><p>Close</p></div>
+        </div>
+
+        <div className="menu-close-icon">
+          <p>&#x2715</p>
+        </div>
+
+
+        <div className="menu-copy">
+          <div className="menu-links">{
+             menu.map((link, index) =>(
+              <div className="menu-link-item" key={index}>
+                <div className="menu-link-item-holder">
+                   <Link href={link.link}>{link.name}</Link>
+                </div>
+              </div>
+             ))
+            }
+            </div>
+
+          <div className="menu-info"></div>
+        </div>
+
+        <div className="menu-preview"></div>
+      </div>
+
     </div>
   )
 }

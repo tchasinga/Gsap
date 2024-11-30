@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Jost:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+/* @import url(https://fonts.googleapis.com/css?family=Jost:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 .famili {
   font-family: "Jost", sans-serif;
@@ -59,6 +59,7 @@ p {
   background: #c5fb45;
   z-index: 2;
   display: flex;
+  clip-path: polygon (00, 100% 0, 100% 100%, 0% 100%);
 }
 
 .menu-close-icon {
@@ -128,6 +129,5 @@ p {
   .menu-link-item-holder a{
     font-size: 50px;
   }
-  
 }
-
+ */
