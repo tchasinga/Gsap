@@ -52,7 +52,7 @@ export default function Navbars() {
   }, [isMenuOpen])
 
   return (
-    <div className='menu-container famili' ref={container}>
+    <div className='menu-container' id='famili' ref={container}>
       <div className="menu-bar">
         <div className="menu-logo">
           <Link href='/'>Tchasinga</Link>
